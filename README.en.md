@@ -1,6 +1,6 @@
 ## Native HTML Tag Component
 
-[中文文档](README.zh.md)
+[中文文档](README)
 
 **Project Name:** Native HTML Tag Component Wrapper
 

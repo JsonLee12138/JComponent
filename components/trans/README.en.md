@@ -1,5 +1,5 @@
 ## Ji18n Internationalization Language Processing Component
-[中文文档](README.zh.md)
+[中文文档](README)
 ### Introduction
 
 Ji18n is a native HTML tag component that is used to process internationalization languages. It can switch the display language of HTML elements such as text, labels, and buttons to the specified language.
