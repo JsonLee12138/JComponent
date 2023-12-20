@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="module" src="components/trans/index.js"></script>
+    <title>Title</title>
+    <script type="module">
+      const en = {
+        "app": {
+          "test": "test"
+        }
+      }
+      const zh = {
+        "app": {
+          "test": "测试"
+        }
+      }
+      const messages = {en, zh}
+      Ji18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
+    </script>
+</head>
+<body>
+<j-trans label="app.test" class="demo"></j-trans>
+<input type="radio" name="lan" value="en"><label>English</label>
+<input type="radio" name="lan" value="zh"><label>中文</label>
+<script>
+  const radios = document.querySelectorAll('input[type="radio"][name="lan"]');
+  for (let radio of radios) {
+    radio.addEventListener('change', e => {
+      Ji18n.setLanguage(e.target.value)
+      setTimeout(() => {
+        console.log(Ji18n.$t("app.test"))
+      }, 500)
+    })
+  }
+</script>
+</body>
+</html>
