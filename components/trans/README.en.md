@@ -1,5 +1,5 @@
 ## Ji18n Internationalization Language Processing Component
-[中文文档](README)
+[中文文档](README.md)
 ### Introduction
 
 Ji18n is a native HTML tag component that is used to process internationalization languages. It can switch the display language of HTML elements such as text, labels, and buttons to the specified language.
@@ -40,7 +40,7 @@ The Ji18n component provides the following methods:
             }
         }
         const messages = {en, zh}
-        i18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
+        Ji18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
     </script>
 </head>
 <body>
@@ -51,9 +51,9 @@ The Ji18n component provides the following methods:
     const radios = document.querySelectorAll('input[type="radio"][name="lan"]');
     for (let radio of radios) {
         radio.addEventListener('change', e => {
-            i18n.setLanguage(e.target.value)
+            Ji18n.setLanguage(e.target.value)
             setTimeout(() => {
-                console.log(i18n.$t("app.test"))
+                console.log(Ji18n.$t("app.test"))
             }, 500)
         })
     }

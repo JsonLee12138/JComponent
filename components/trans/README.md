@@ -40,7 +40,7 @@ Ji18n 组件提供以下方法：
             }
         }
         const messages = {en, zh}
-        i18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
+        Ji18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
     </script>
 </head>
 <body>
@@ -51,9 +51,9 @@ Ji18n 组件提供以下方法：
     const radios = document.querySelectorAll('input[type="radio"][name="lan"]');
     for (let radio of radios) {
         radio.addEventListener('change', e => {
-            i18n.setLanguage(e.target.value)
+            Ji18n.setLanguage(e.target.value)
             setTimeout(() => {
-                console.log(i18n.$t("app.test"))
+                console.log(Ji18n.$t("app.test"))
             }, 500)
         })
     }
