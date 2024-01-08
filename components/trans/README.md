@@ -61,3 +61,18 @@ Ji18n 组件提供以下方法：
 </body>
 </html>
 ```
+
+```js
+<!--vue3 vite处理-->
+export default defineConfig({
+    plugins: [
+        vue({
+            template: {
+                compilerOptions: {
+                isCustomElement: tag => tag === 'j-trans'
+                }
+            }
+        })
+    ]
+})
+```

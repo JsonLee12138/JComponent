@@ -7,12 +7,12 @@
     <script type="module">
       const en = {
         "app": {
-          "test": "test"
+          "test": "test{test}"
         }
       }
       const zh = {
         "app": {
-          "test": "测试"
+          "test": "测试{test}"
         }
       }
       const messages = {en, zh}
@@ -21,10 +21,12 @@
 </head>
 <body>
 <j-trans label="app.test" class="demo"></j-trans>
-<input type="radio" name="lan" value="en"><label>English</label>
+<input type="radio" name="lan" value="en" checked><label>English</label>
 <input type="radio" name="lan" value="zh"><label>中文</label>
 <script>
   const radios = document.querySelectorAll('input[type="radio"][name="lan"]');
+  test = document.querySelector('.demo');
+  test.setAttribute("options", JSON.stringify({test: 123}));
   for (let radio of radios) {
     radio.addEventListener('change', e => {
       Ji18n.setLanguage(e.target.value)

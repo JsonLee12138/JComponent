@@ -61,3 +61,18 @@ The Ji18n component provides the following methods:
 </body>
 </html>
 ```
+
+```js
+<!--vue3 vite处理-->
+export default defineConfig({
+    plugins: [
+        vue({
+            template: {
+                compilerOptions: {
+                isCustomElement: tag => tag === 'j-trans'
+                }
+            }
+        })
+    ]
+})
+```

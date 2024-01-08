@@ -62,7 +62,7 @@ class Trans extends HTMLElement {
     const label = this.getAttribute('label');
     this.setAttribute('data-lan', true);
     const lang = this.getAttribute('lang');
-    this.setParams(this.getAttribute('params'))
+    this.setParams(this.getAttribute('options'));
     this.label = label;
     this.lang = lang || 'en';
   }
@@ -89,12 +89,12 @@ class Trans extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    setTimeout(()=>{
+    requestAnimationFrame(()=> {
       if (name === 'options') {
         this.setParams(newValue);
       }
       this.content.textContent = trans(this.label, Ji18n.messages, this.lang, Ji18n.backLanguage, this.options);
-    },0)
+    })
   }
 
   static get observedAttributes() {
