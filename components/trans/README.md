@@ -64,12 +64,6 @@ Ji18n 组件提供以下方法：
 </html>
 ```
 
-```typescript
-// 如果需要用到 ts , 请实例化的时候重新赋值全局变量
-// 示例:
-window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
-```
-
 ```js
 // vue3 vite处理
 export default defineConfig({
@@ -83,4 +77,19 @@ export default defineConfig({
         })
     ]
 })
+// vue 或 react只需在 main.js 中引用
+import "@json_web_component/ji18n";
+
+window.createJi18n({
+  messages: {
+    en: {},
+    zh: {}
+  }
+})
+```
+
+```typescript
+// 如果需要用到 ts , 请实例化的时候重新赋值全局变量
+// 示例:
+window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
 ```

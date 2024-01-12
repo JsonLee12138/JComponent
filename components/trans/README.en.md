@@ -64,12 +64,6 @@ The Ji18n component provides the following methods:
 </html>
 ```
 
-```typescript
-// If you need to use ts, reassign the global variable when instantiating it.
-// eg:
-window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
-```
-
 ```js
 // vue3 vite processing
 export default defineConfig({
@@ -83,4 +77,20 @@ export default defineConfig({
         })
     ]
 })
+
+// vue or react simply refer to it in main.js.
+import "@json_web_component/ji18n";
+
+window.createJi18n({
+  messages: {
+    en: {},
+    zh: {}
+  }
+})
+```
+
+```typescript
+// If you need to use ts, reassign the global variable when instantiating it.
+// eg:
+window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
 ```
