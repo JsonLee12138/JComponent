@@ -1,5 +1,5 @@
 ## Ji18n 国际化语言处理组件
-[English Documents](README.en.md)
+[English Documents](https://github.com/JsonLee12138/JComponent/tree/main/components/trans/README.en.md)
 ### 介绍
 
 Ji18n 是一个原生 HTML 标签组件，用于处理国际化语言。它可以将文本、标签、按钮等 HTML 元素的显示语言切换为指定的语言。
@@ -16,9 +16,10 @@ Ji18n 组件可以通过以下属性进行配置：
 
 Ji18n 组件提供以下方法：
 
-* **create()**：创建 Ji18n 实例。
+* **createJi18n()**：创建 Ji18n 实例。
 * **setLanguage()**：设置当前语言。
 * **$t()**：获取翻译文本。
+* **onChange()**：语言更换的回调。
 ### 使用示例
 
 ```html
@@ -40,7 +41,8 @@ Ji18n 组件提供以下方法：
             }
         }
         const messages = {en, zh}
-        Ji18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
+        // 当不传入 defaultLanguage 和 backLanguage 时, 默认为系统语言
+        createJi18n({messages, defaultLanguage: 'en', backLanguage: 'en'});
     </script>
 </head>
 <body>
@@ -62,8 +64,14 @@ Ji18n 组件提供以下方法：
 </html>
 ```
 
+```typescript
+// 如果需要用到 ts , 请实例化的时候重新赋值全局变量
+// 示例:
+window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
+```
+
 ```js
-<!--vue3 vite处理-->
+// vue3 vite处理
 export default defineConfig({
     plugins: [
         vue({

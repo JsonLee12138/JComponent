@@ -1,5 +1,5 @@
 ## Ji18n Internationalization Language Processing Component
-[中文文档](README.md)
+[中文文档](https://github.com/JsonLee12138/JComponent/tree/main/components/trans/README.md)
 ### Introduction
 
 Ji18n is a native HTML tag component that is used to process internationalization languages. It can switch the display language of HTML elements such as text, labels, and buttons to the specified language.
@@ -16,9 +16,10 @@ The Ji18n component can be configured with the following properties:
 
 The Ji18n component provides the following methods:
 
-* **create():** Creates a Ji18n instance.
+* **createJi18n():** Creates a Ji18n instance.
 * **setLanguage():** Sets the current language.
 * **$t():** Gets the translation text.
+* **onChange()**：Callbacks for language change。
 ### Usage Example
 
 ```html
@@ -40,13 +41,14 @@ The Ji18n component provides the following methods:
             }
         }
         const messages = {en, zh}
-        Ji18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
+        // When defaultLanguage and backLanguage are not passed, the default language is the system language.
+        createJi18n({messages, defaultLanguage: 'en', backLanguage: 'en'});
     </script>
 </head>
 <body>
 <j-trans label="app.test" class="demo"></j-trans>
 <input type="radio" name="lan" value="en"><label>English</label>
-<input type="radio" name="lan" value="zh"><label>Chinese</label>
+<input type="radio" name="lan" value="zh"><label>中文</label>
 <script>
     const radios = document.querySelectorAll('input[type="radio"][name="lan"]');
     for (let radio of radios) {
@@ -62,8 +64,14 @@ The Ji18n component provides the following methods:
 </html>
 ```
 
+```typescript
+// If you need to use ts, reassign the global variable when instantiating it.
+// eg:
+window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
+```
+
 ```js
-<!--vue3 vite处理-->
+// vue3 vite processing
 export default defineConfig({
     plugins: [
         vue({

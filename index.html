@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="module" src="components/trans/index.js"></script>
+<!--    <script type="module" src="components/trans/index.js"></script>-->
+    <script type="module" src="./components/trans/dist/main.min.js"></script>
     <title>Title</title>
     <script type="module">
       const en = {
@@ -16,7 +17,7 @@
         }
       }
       const messages = {en, zh}
-      Ji18n.create({messages, defaultLanguage: 'en', backLanguage: 'en'});
+      createJi18n({messages})
     </script>
 </head>
 <body>

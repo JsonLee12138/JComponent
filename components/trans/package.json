@@ -1,0 +1,36 @@
+{
+  "name": "@json_web_component/ji18n",
+  "version": "1.0.6",
+  "description": "一个国际化的web component库, 可无感切换语言; An internationalized web component library with senseless language switching.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && webpack"
+  },
+  "repository": "https://github.com/JsonLee12138/JComponent/tree/main/components/trans",
+  "documentation": {
+    "url": "https://github.com/JsonLee12138/JComponent/tree/main/components/trans/README.md"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": ["web component", "i18n", "国际化", "多语言"],
+  "author": "",
+  "private": false,
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/webpack-env": "^1.18.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.1",
+    "rimraf": "^5.0.5",
+    "terser-webpack-plugin": "^5.3.10",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
