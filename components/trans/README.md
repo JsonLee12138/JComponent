@@ -27,7 +27,7 @@ Ji18n 组件提供以下方法：
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="module" src="./components/trans/index.js"></script>
+    <script type="module" src="https://unpkg.com/@json_web_component/ji18n/dist/main.min.js"></script>
     <title>Title</title>
     <script type="module">
         const en = {
@@ -62,6 +62,11 @@ Ji18n 组件提供以下方法：
 </script>
 </body>
 </html>
+```
+
+```html
+<!-- 原生 html 引用 -->
+<script type="module" src="https://unpkg.com/@json_web_component/ji18n/dist/main.min.js"></script>
 ```
 
 ```js
