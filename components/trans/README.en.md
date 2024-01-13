@@ -95,7 +95,7 @@ window.createJi18n({
 ```
 
 ```typescript
-// tsconfig 中添加 include
+// Add include to tsconfig
 {
   "compilerOptions":{},
   "include": ["node_modules/@json_web_component/ji18n/dist/global.d.ts"],
