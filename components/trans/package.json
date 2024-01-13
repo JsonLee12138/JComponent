@@ -1,6 +1,6 @@
 {
   "name": "@json_web_component/ji18n",
-  "version": "1.0.8",
+  "version": "2.0.1",
   "description": "一个国际化的web component库, 可无感切换语言; An internationalized web component library with senseless language switching.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,12 @@
     "dist",
     "README.md"
   ],
-  "keywords": ["web component", "i18n", "国际化", "多语言"],
+  "keywords": [
+    "web component",
+    "i18n",
+    "国际化",
+    "多语言"
+  ],
   "author": "",
   "private": false,
   "license": "ISC",

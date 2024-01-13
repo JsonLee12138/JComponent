@@ -25,7 +25,7 @@ window.createJi18n = <T extends string>({
   messages = {} as Ji18nMessages<T>,
   defaultLanguage = localLanguage() as T,
   backLanguage = localLanguage() as T,
-                                          change
+  change
 }: Ji18nCreateProps<T>): Ji18nInstance<T> => {
   const instance: Ji18nInstance<T> = {
     messages, backLanguage, lang: defaultLanguage, onChange: change

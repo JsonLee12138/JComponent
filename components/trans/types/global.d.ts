@@ -6,7 +6,7 @@ declare type Ji18nCreateProps<T extends string> = {
   messages: Ji18nMessages<T>;
   defaultLanguage?: T;
   backLanguage?: T;
-  change?: (value: T)=> any;
+  change?: (value: T) => any;
 }
 
 declare interface Ji18nInstance<T extends string> {
@@ -15,7 +15,7 @@ declare interface Ji18nInstance<T extends string> {
   lang: T;
   setLanguage: (lan: T) => void;
   $t: (key: string, options?: Record<string, string | number>) => string | number;
-  onChange: (value: T)=> any;
+  onChange: (value: T) => any;
 }
 
 // interface Ji18n {

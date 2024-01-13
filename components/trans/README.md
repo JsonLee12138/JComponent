@@ -94,6 +94,11 @@ window.createJi18n({
 ```
 
 ```typescript
+// tsconfig 中添加 include
+{
+  "compilerOptions":{},
+  "include": ["node_modules/@json_web_component/ji18n/dist/global.d.ts"],
+}
 // 如果需要用到 ts , 请实例化的时候重新赋值全局变量
 // 示例:
 window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
