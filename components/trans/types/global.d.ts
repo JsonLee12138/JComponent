@@ -1,6 +1,6 @@
 // Ji18n类型文件, 需要先去tsconfig.json文件中配置
 
-declare type Ji18nMessages<T extends string> = Record<T, string | number | Record<string, string | number>>;
+declare type Ji18nMessages<T extends string> = Record<T, any>;
 
 declare type Ji18nCreateProps<T extends string> = {
   messages: Ji18nMessages<T>;

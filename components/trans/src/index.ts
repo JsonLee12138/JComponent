@@ -89,7 +89,7 @@ const trans = <T extends string>(key: string, sourceData: Ji18nMessages<T> | Rec
 class Trans extends HTMLElement {
   label: string;
   options: Record<string, string | number> | undefined = undefined;
-  content: any;
+  content: ShadowRoot | undefined;
 
   constructor() {
     super();
@@ -130,7 +130,9 @@ class Trans extends HTMLElement {
       if (name === 'options') {
         this.setParams(newValue);
       }
-      this.content.textContent = trans(this.label, window?.Ji18n.messages, this.lang, window?.Ji18n.backLanguage, this.options);
+      if (this.content) {
+        this.content.textContent = trans(this.label, window?.Ji18n.messages, this.lang, window?.Ji18n.backLanguage, this.options) as string;
+      }
     })
   }
 
