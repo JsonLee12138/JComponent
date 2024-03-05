@@ -87,12 +87,13 @@ const trans = <T extends string>(key: string, sourceData: Ji18nMessages<T> | Rec
 }
 
 class Trans extends HTMLElement {
-  label: string;
-  options: Record<string, string | number> | undefined = undefined;
-  content: ShadowRoot | undefined;
+  private label: string;
+  private options: Record<string, string | number> | undefined = undefined;
+  private content: ShadowRoot | undefined;
 
   constructor() {
     super();
+    this.attachShadow({ mode: "open" })
     const label = this.getAttribute('label');
     this.setAttribute('data-lan', "true");
     const lang = this.getAttribute('lang');
@@ -108,7 +109,7 @@ class Trans extends HTMLElement {
     this.content = shadow;
   }
 
-  setParams(params: string | undefined | Record<string, string | number>) {
+  private setParams(params: string | undefined | Record<string, string | number>) {
     let res = params;
     if (typeof params === 'string') {
       try {
