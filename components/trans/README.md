@@ -1,5 +1,5 @@
 ## Ji18n 国际化语言处理组件
-[English Documents](https://github.com/JsonLee12138/JComponent/tree/main/components/trans/README.en.md)
+[English Documents](https://github.com/JsonLee12138/JComponent/blob/master/components/trans/README.en.md)
 ### 介绍
 
 Ji18n 是一个原生 HTML 标签组件，用于处理国际化语言。它可以将文本、标签、按钮等 HTML 元素的显示语言切换为指定的语言。

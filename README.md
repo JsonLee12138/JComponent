@@ -1,6 +1,6 @@
 ## 原生 HTML 标签组件
 
-[English Documents](README.en.md)
+[English Documents](https://github.com/JsonLee12138/JComponent/blob/master/README.en.md)
 
 
 **项目简介：**

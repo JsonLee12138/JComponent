@@ -1,6 +1,6 @@
 ## Native HTML Tag Component
 
-[中文文档](README.md)
+[中文文档](https://github.com/JsonLee12138/JComponent/blob/master/README.md)
 
 **Project Name:** Native HTML Tag Component Wrapper
 
