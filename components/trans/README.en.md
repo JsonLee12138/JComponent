@@ -104,3 +104,21 @@ window.createJi18n({
 // eg:
 window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
 ```
+
+```typescript
+// react usage issues
+// If ts reports an error: Property 'j-trans' does not exist on type 'JSX.IntrinsicElements'.
+// 1. Create a global type file, e.g. global.d.ts.
+// 2. Add the global type file to the include in tsconfig.
+// The contents of the global file will look like this:
+type JTransProps = React.HTMLAttributes<HTMLElement> & {
+  label: string;
+  options?: Record<string, any>;
+  lang?: string;
+}
+declare namespace JSX {
+  interface IntrinsicElements {
+    'j-trans': React.DetailedHTMLProps<JTransProps, HTMLElement>;
+  }
+}
+```

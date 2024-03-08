@@ -103,3 +103,21 @@ window.createJi18n({
 // 示例:
 window.Ji18n = createJi18n<"en" | "zh">({messages, defaultLanguage: 'en', backLanguage: 'en'});
 ```
+
+```typescript
+// react 使用问题
+// 如果ts报错: Property 'j-trans' does not exist on type 'JSX.IntrinsicElements'.
+// 1. 创建一个全局类型文件 例如 global.d.ts
+// 2. 在tsconfig 中include 中加入该全局类型文件
+// 该全局文件的内容如下:
+type JTransProps = React.HTMLAttributes<HTMLElement> & {
+  label: string;
+  options?: Record<string, any>;
+  lang?: string;
+}
+declare namespace JSX {
+  interface IntrinsicElements {
+    'j-trans': React.DetailedHTMLProps<JTransProps, HTMLElement>;
+  }
+}
+```

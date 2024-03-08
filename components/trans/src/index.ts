@@ -55,7 +55,9 @@ window.createJi18n = <T extends string>({
   instance.$t = (key: string, options?: Record<string, string | number>) => trans<T>(key, instance.messages, currentLan.value, currentLan.back, options) as string | number;
   if (window) {
     window.Ji18n = instance;
-    customElements.define('j-trans', Trans);
+    customElements.define('j-trans', Trans, {
+      extends: 'div'
+    });
   }
   return instance;
 }
@@ -103,10 +105,11 @@ class Trans extends HTMLElement {
   }
 
   connectedCallback() {
-    const shadow = this.attachShadow({ mode: 'closed' });
     let text = trans(this.label, window?.Ji18n.messages, this.lang, window?.Ji18n.backLanguage, this.options) as number | string;
-    shadow.textContent = typeof text === "number" ? text.toString() : text;
-    this.content = shadow;
+    this.textContent = typeof text === "number" ? text.toString() : text;
+    // const shadow = this.attachShadow({ mode: 'closed' });
+    // shadow.textContent = typeof text === "number" ? text.toString() : text;
+    // this.content = shadow;
   }
 
   private setParams(params: string | undefined | Record<string, string | number>) {
