@@ -3,40 +3,58 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- <script type="module" src="./components/trans/dist/main.min.js"></script> -->
-  <script type="module" src="https://unpkg.com/@json_web_component/ji18n/dist/main.min.js"></script>
+  <!-- <script type="module" src="https://unpkg.com/@json_web_component/infinitscrollpagination/dist/main.min.js"></script> -->
+  <script type="module" src="./components/infiniteScrollPagination/dist/index.js"></script>
   <title>Title</title>
   <script type="module">
-    const en = {
-      "app": {
-        "test": "test{test}"
-      }
-    }
-    const zh = {
-      "app": {
-        "test": "测试{test}"
-      }
-    }
-    const messages = { en, zh }
-    createJi18n({ messages })
   </script>
+  <style>
+    .scroll-container {}
+  </style>
 </head>
 
 <body>
-  <j-trans label="app.test" class="demo"></j-trans>
-  <input type="radio" name="lan" value="en" checked><label>English</label>
-  <input type="radio" name="lan" value="zh"><label>中文</label>
+  <infinit-scroll class="scroll-container" height="200px">
+  </infinit-scroll>
   <script>
-    const radios = document.querySelectorAll('input[type="radio"][name="lan"]');
-    test = document.querySelector('.demo');
-    test.setAttribute("options", JSON.stringify({ test: 123 }));
-    for (let radio of radios) {
-      radio.addEventListener('change', e => {
-        Ji18n.setLanguage(e.target.value)
-        setTimeout(() => {
-          console.log(Ji18n.$t("app.test"))
-        }, 500)
-      })
+    const container = document.querySelector('.scroll-container');
+    let loading = false;
+    let hasMore = true;
+    container.setAttribute('has-more', hasMore);
+    container.setAttribute('loading', loading);
+    container.addEventListener('load', getListData)
+    function getListData(page) {
+      loading = true;
+      container.setAttribute('loading', loading);
+      setTimeout(() => {
+        loading = false;
+        hasMore = false;
+        container.setAttribute('has-more', hasMore);
+        container.setAttribute('loading', loading);
+        console.log(page, '获取到数据');
+        for (let i = 0; i < 12; i++) {
+          const item = document.createElement('div');
+          const styles = {
+            height: '80px',
+            background: '#eee',
+            marginBottom: '10px'
+          }
+          for (const key in styles) {
+            if (Object.hasOwnProperty.call(styles, key)) {
+              const val = styles[key];
+              item.style[key] = val;
+            }
+          }
+          // 如果 reverse 为 true
+          container.append(item);
+          // 如果 reverse 为 false
+          // container.prepend(item)
+          // 如果需要滚动到底部
+          // container.scrollToEnd();
+          // 如果需要滚动到顶部
+          // container.scrollToTop();
+        }
+      }, 800)
     }
   </script>
 </body>

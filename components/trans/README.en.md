@@ -65,7 +65,7 @@ The Ji18n component provides the following methods:
 ```
 
 ```html
-<!-- 原生 html 引用 -->
+<!-- Native html references -->
 <script type="module" src="https://unpkg.com/@json_web_component/ji18n/dist/main.min.js"></script>
 ```
 
