@@ -9,7 +9,7 @@ declare type ScrollOptions = {
   behavior?: 'smooth' | 'instant' | 'into'
 }
 
-declare type PageContainerProps = React.HTMLAttributes<HTMLElement> & {
+declare type InfinitScrollPaginationProps = React.HTMLAttributes<HTMLElement> & {
   reverse?: boolean;
   loading?: boolean;
   ['has-more']?: boolean;
