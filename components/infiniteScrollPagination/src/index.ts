@@ -1,5 +1,39 @@
+class CusElement extends HTMLElement {
+  constructor() {
+    super();
+  }
 
-class InfinitScrollPagination extends HTMLElement {
+  connectedCallback() {
+    const classNames = this.getAttribute('class');
+    // classNames && this.classList.add(...classNames.split(' '));
+    classNames && this.setAttribute('class', classNames);
+    const styles = this.getAttribute('style');
+    styles && this.setAttribute('style', styles)
+  }
+
+  disconnectedCallback() {
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    // requestAnimationFrame(() => {
+    // })
+    switch (name) {
+      case 'style':
+        this.setAttribute('style', newValue);
+        break;
+      case 'class':
+        this.setAttribute('class', newValue);
+        break;
+      default:
+        break;
+    }
+  }
+
+  static get observedAttributes() {
+    return ['style', 'class'];
+  }
+}
+class InfinitScrollPagination extends CusElement {
   private reverse: boolean = false;
   private page: number = 0;
   private loading: boolean = false;
@@ -13,8 +47,6 @@ class InfinitScrollPagination extends HTMLElement {
     if (threshold < 0 || threshold > 1) {
       throw new Error('Threshold values must be numbers between 0 and 1');
     }
-    const classNames = this.getAttribute('class');
-    classNames && this.classList.add(...classNames.split(' '));
     this.threshold = threshold;
     const loading = this.getAttribute('loading');
     this.loading = loading === "true";
@@ -88,8 +120,8 @@ class InfinitScrollPagination extends HTMLElement {
       case 'loading':
         this.loading = newValue === "true";
         break;
-      case 'class':
-        newValue && newValue !== oldValue && this.classList.add(...newValue.split(' '));
+        // case 'class':
+        //   newValue && newValue !== oldValue && this.classList.add(...newValue.split(' '));
         break;
       case 'has-more':
         this.hasMore = newValue === null ? true : newValue === "true";
@@ -104,7 +136,7 @@ class InfinitScrollPagination extends HTMLElement {
     }
   }
   static get observedAttributes() {
-    return ['callback', 'reverse', 'loading', 'class', 'has-more', 'height']
+    return ['callback', 'reverse', 'loading', 'has-more', 'height']
   }
 }
 

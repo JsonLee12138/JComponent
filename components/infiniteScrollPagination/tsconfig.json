@@ -11,8 +11,8 @@
     // "disableReferencedProjectLoad": true,             /* 减少 TypeScript 自动加载的项目数量。 */
 
     /* 语言与环境 */
-    "target": "es2016",                                  /* 为发射的 JavaScript 设置 JavaScript 语言版本，并包含兼容库声明。 */
-//     "lib": [],                                        /* 指定一组捆绑的库声明文件，用于描述目标运行环境。 */
+    "target": "es2016" /* 为发射的 JavaScript 设置 JavaScript 语言版本，并包含兼容库声明。 */,
+    //     "lib": [],                                        /* 指定一组捆绑的库声明文件，用于描述目标运行环境。 */
     // "jsx": "preserve",                                /* 指定生成的 JSX 代码。 */
     // "experimentalDecorators": true,                   /* 启用对传统实验装饰器的实验支持。 */
     // "emitDecoratorMetadata": true,                    /* 为源文件中的装饰声明提供设计类型元数据。 */
@@ -25,7 +25,7 @@
     // "moduleDetection": "auto",                        /* 控制用于检测模块格式 JS 文件的方法。 */
 
     /* 模块 */
-    "module": "commonjs",                                /* 指定生成的模块代码。 */
+    "module": "commonjs" /* 指定生成的模块代码。 */,
     // "rootDir": "./",                                  /* 指定源文件的根文件夹。 */
     // "moduleResolution": "node",                     /* 指定 TypeScript 如何从给定的模块指定符查找文件。 */
     // "baseUrl": "./",                                  /* 指定用于解析非相关模块名称的基本目录。 */
@@ -49,13 +49,13 @@
     // "maxNodeModuleJsDepth": 1,                        /* 指定用于检查 "node_modules "中 JavaScript 文件的最大文件夹深度。仅适用于 "allowJs"。 */
 
     /* 发射 */
-     "declaration": true,                              /* 从项目中的 TypeScript 和 JavaScript 文件生成 .d.ts 文件。 */
+    "declaration": true /* 从项目中的 TypeScript 和 JavaScript 文件生成 .d.ts 文件。 */,
     // "declarationMap": true,                           /* 为 d.ts 文件创建源映射。 */
     // "emitDeclarationOnly": true,                      /* 只输出 d.ts 文件，不输出 JavaScript 文件。 */
     // "sourceMap": true,                                /* 为发射的 JavaScript 文件创建源映射文件。 */
     // "inlineSourceMap": true,                          /* 在发射的 JavaScript 中包含源映射文件。 */
     // "outFile": "./",                                  /* 指定一个文件，将所有输出捆绑到一个 JavaScript 文件中。如果 "declaration "为 true，则还指定一个可将所有 .d.ts 输出捆绑在一起的文件。 */
-     "outDir": "./dist",                                   /* 为所有输出文件指定一个输出文件夹。 */
+    "outDir": "./dist" /* 为所有输出文件指定一个输出文件夹。 */,
     // "removeComments": true,                           /* 禁用发表评论。 */
     // "noEmit": true,                                   /* 禁止从编译中发射文件。 */
     // "importHelpers": true,                            /* 允许每个项目从 tslib 中导入一次辅助函数，而不是按文件导入。 */
@@ -77,12 +77,12 @@
     // "isolatedModules": true,                          /* 确保每个文件都能安全地转译，而无需依赖其他导入。 */
     // "verbatimModuleSyntax": true,                     /* 不要转换或省略任何未标记为纯类型的导入或导出，确保根据 "模块 "设置以输出文件格式写入。 */
     // "allowSyntheticDefaultImports": true,             /* 当模块没有默认导出时，允许 "import x from y"。 */
-    "esModuleInterop": true,                             /* 放出额外的 JavaScript，以简化对 CommonJS 模块导入的支持。这将启用 "allowSyntheticDefaultImports"，以实现类型兼容性。 */
+    "esModuleInterop": true /* 放出额外的 JavaScript，以简化对 CommonJS 模块导入的支持。这将启用 "allowSyntheticDefaultImports"，以实现类型兼容性。 */,
     // "preserveSymlinks": true,                         /* 禁止根据实际路径解析符号链接。这与 node 中的标志相同。 */
-    "forceConsistentCasingInFileNames": true,            /* 确保套管进口正确。 */
+    "forceConsistentCasingInFileNames": true /* 确保套管进口正确。 */,
 
     /* 类型检查 */
-    "strict": true,                                      /* 启用所有严格的类型检查选项。 */
+    "strict": true /* 启用所有严格的类型检查选项。 */,
     // "noImplicitAny": true,                            /* 启用隐含 "any "类型的表达式和声明的错误报告功能。 */
     // "strictNullChecks": true,                         /* 在进行类型检查时，要考虑到 "null "和 "undefined"。 */
     // "strictFunctionTypes": true,                      /* 在分配函数时，检查以确保参数和返回值与子类型兼容。 */
@@ -104,10 +104,7 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* 跳过 TypeScript 附带的 .d.ts 文件类型检查。 */
-    "skipLibCheck": true                                 /* 跳过所有 .d.ts 文件的类型检查。 */
+    "skipLibCheck": true /* 跳过所有 .d.ts 文件的类型检查。 */
   },
-  "include": [
-    "src/**/*.ts",
-    "types/global.d.ts"
-  ]
+  "include": ["src/**/*.ts", "types/global.d.ts"]
 }

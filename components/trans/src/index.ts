@@ -88,14 +88,50 @@ const trans = <T extends string>(key: string, sourceData: Ji18nMessages<T> | Rec
   return result;
 }
 
-class Trans extends HTMLElement {
+class CusElement extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    const classNames = this.getAttribute('class');
+    // classNames && this.classList.add(...classNames.split(' '));
+    classNames && this.setAttribute('class', classNames);
+    const styles = this.getAttribute('style');
+    styles && this.setAttribute('style', styles)
+  }
+
+  disconnectedCallback() {
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    // requestAnimationFrame(() => {
+    // })
+    switch (name) {
+      case 'style':
+        this.setAttribute('style', newValue);
+        break;
+      case 'class':
+        this.setAttribute('class', newValue);
+        break;
+      default:
+        break;
+    }
+  }
+
+  static get observedAttributes() {
+    return ['style', 'class'];
+  }
+}
+
+class Trans extends CusElement {
   private label: string;
   private options: Record<string, string | number> | undefined = undefined;
-  private content: ShadowRoot | undefined;
+  // private content: ShadowRoot | undefined;
 
   constructor() {
     super();
-    this.attachShadow({ mode: "open" })
+    // this.attachShadow({ mode: "open" })
     const label = this.getAttribute('label');
     this.setAttribute('data-lan', "true");
     const lang = this.getAttribute('lang');
@@ -134,9 +170,10 @@ class Trans extends HTMLElement {
       if (name === 'options') {
         this.setParams(newValue);
       }
-      if (this.content) {
-        this.content.textContent = trans(this.label, window?.Ji18n.messages, this.lang, window?.Ji18n.backLanguage, this.options) as string;
-      }
+      // if (this.content) {
+      //   this.content.textContent = trans(this.label, window?.Ji18n.messages, this.lang, window?.Ji18n.backLanguage, this.options) as string;
+      // }
+      this.textContent = trans(this.label, window?.Ji18n.messages, this.lang, window?.Ji18n.backLanguage, this.options) as string;
     })
   }
 

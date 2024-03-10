@@ -18,14 +18,17 @@ declare interface Ji18nInstance<T extends string> {
   onChange: (value: T) => any;
 }
 
-// interface Ji18n {
-//   create: <T>(props: Ji18nCreateProps<T>) => Ji18nInstance<T>;
-//   // messages: Ji18nMessages<T>;
-//   // setLanguage: (lan: T) => void;
-//   // $t: (key: string, options: string | object) => string | number;
-// }
-
 interface Window {
   Ji18n: Ji18nInstance<any>;
   createJi18n: <T extends string>(props: Ji18nCreateProps<T>) => Ji18nInstance<T>;
+}
+
+declare type CusElementAttr = {
+  class?: string;
+  style?: string;
+}
+
+declare type Ji18nAttr = CusElementAttr & {
+  label: string;
+  options?: string | Record<string, any>;
 }
