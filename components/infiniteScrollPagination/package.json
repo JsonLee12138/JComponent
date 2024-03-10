@@ -1,6 +1,6 @@
 {
   "name": "@json_web_component/infinitscrollpagination",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "一个国际化的web component库, 可无感切换语言; An internationalized web component library with senseless language switching.",
   "main": "dist/main.min.js",
   "types": "dist/index.d.ts",

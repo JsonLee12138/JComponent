@@ -133,7 +133,7 @@ import "@json_web_component/infinitscrollpagination";
 
 declare namespace JSX {
   interface IntrinsicElements {
-    'infinit-scroll': React.DetailedHTMLProps<InfinitScrollPaginationProps, HTMLElement>;
+    'infinit-scroll': React.DetailedHTMLProps<InfinitScrollPaginationAttr, HTMLElement>;
   }
 }
 

@@ -9,15 +9,6 @@ declare type ScrollOptions = {
   behavior?: 'smooth' | 'instant' | 'into'
 }
 
-// declare type InfinitScrollPaginationProps = React.HTMLAttributes<HTMLElement> & {
-//   reverse?: boolean;
-//   loading?: boolean;
-//   ['has-more']?: boolean;
-//   class?: string;
-//   threshold?: number;
-//   height?: string;
-// }
-
 declare type CusElementAttr = {
   class?: string;
   style?: string;
